@@ -30,21 +30,21 @@ export default async function Home() {
           href="https://twitter.com/steventey/status/1613928948915920896"
           target="_blank"
           rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 dark:bg-blue-900 px-7 py-2 transition-colors hover:bg-blue-200 dark:hover:bg-blue-800"
         >
-          <Twitter className="h-5 w-5 text-[#1d9bf0]" />
-          <p className="text-sm font-semibold text-[#1d9bf0]">
+          <Twitter className="h-5 w-5 text-[#1d9bf0] dark:text-blue-400" />
+          <p className="text-sm font-semibold text-[#1d9bf0] dark:text-blue-400">
             Introducing Precedent
           </p>
         </a>
         <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
+          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 dark:from-white dark:to-gray-400 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           Building blocks for your Next project
         </h1>
         <p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
+          className="mt-6 animate-fade-up text-center text-gray-500 dark:text-gray-400 opacity-0 [text-wrap:balance] md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           An opinionated collection of components, hooks, and utilities for your
@@ -55,13 +55,13 @@ export default async function Home() {
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
           <a
-            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
+            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black dark:border-gray-700 bg-black dark:bg-gray-800 px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black dark:hover:bg-gray-700"
             href={DEPLOY_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
-              className="h-4 w-4 group-hover:text-black"
+              className="h-4 w-4 group-hover:text-black dark:group-hover:text-white"
               viewBox="0 0 24 24"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default async function Home() {
             <p>Deploy to Vercel</p>
           </a>
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-2 text-sm text-gray-600 dark:text-gray-300 shadow-md transition-colors hover:border-gray-800 dark:hover:border-gray-400"
             href="https://github.com/steven-tey/precedent"
             target="_blank"
             rel="noopener noreferrer"
