@@ -5,7 +5,7 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Navbar from "@/components/layout/navbar";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
   title: "Precedent - Building blocks for your Next.js project",
@@ -20,10 +20,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={cx(sfPro.variable, inter.variable)}>
-          <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+    <html lang="en" suppressHydrationWarning>
+      <body className={cx(sfPro.variable, inter.variable)}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <div
+            className="fixed h-screen w-full bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            data-testid="background-gradient"
+          />
           <Suspense fallback="...">
             <Navbar />
           </Suspense>
@@ -32,8 +35,8 @@ export default async function RootLayout({
           </main>
           <Footer />
           <VercelAnalytics />
-        </body>
-      </html>
-    </ClerkProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

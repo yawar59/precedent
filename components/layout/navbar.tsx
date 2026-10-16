@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { LayoutDashboard } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function NavBar() {
   const scrolled = useScroll(50);
@@ -14,7 +13,7 @@ export default function NavBar() {
       <div
         className={`fixed top-0 flex w-full justify-center ${
           scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
+            ? "border-b border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl"
             : "bg-white/0"
         } z-30 transition-all`}
       >
@@ -27,26 +26,14 @@ export default function NavBar() {
               height="30"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>Precedent</p>
+            <p className="text-gray-900 dark:text-gray-100">Precedent</p>
           </Link>
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="rounded-full border border-black bg-black px-4 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black">
-                Sign In
-              </button>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton>
-              <UserButton.MenuItems>
-                <UserButton.Link
-                  label="Dashboard"
-                  labelIcon={<LayoutDashboard className="h-4 w-4" />}
-                  href="/"
-                />
-              </UserButton.MenuItems>
-            </UserButton>
-          </SignedIn>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <button className="rounded-full border border-black dark:border-gray-300 bg-black dark:bg-gray-800 px-4 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black dark:hover:bg-gray-700 opacity-50 cursor-not-allowed">
+              Sign In (Demo)
+            </button>
+          </div>
         </div>
       </div>
     </>
